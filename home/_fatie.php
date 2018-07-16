@@ -6,10 +6,17 @@ if (!isset($_GET['bk'])) {
 }
 $bk = getParam('bk');
 $zt = !empty(getParam('zt')) ? getParam('zt') : 0;
-
+$csrf_token = getParam('csrf_token');
+if($csrf_token != $_SESSION['fatie']) {
+	echo 'csrf不合法';die;
+}
 $cid = getParam('bk');
 $title = getParam('title');
 $content = getParam('content');
+$content = html_entity_decode($content);
+$content = strip_tags($content,'<img><p>');
+//$content = htmlspecialchars($content);
+
 $ptime = $_SERVER['REQUEST_TIME'];
 $username = empty($_SESSION['home']['username']) ? '' : $_SESSION['home']['username'];
 $pip = intval(ip2long($_SERVER['REMOTE_ADDR']));

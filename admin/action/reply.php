@@ -20,7 +20,7 @@ class reply
         }
 
         //开始分页大小
-        $page_size = 5;
+        $page_size = 150;
 
         //获取当前页码
         $page_num = empty($_GET['page']) ? 1 : $_GET['page'];

@@ -74,7 +74,7 @@ function includeAction($model, $action)
 function getParam($paramName)
 {
     $value = isset($_GET[$paramName]) ? $_GET[$paramName] : $_POST[$paramName];
-    $value = htmlspecialchars($value);
+//    $value = htmlspecialchars($value);
 
     return $value;
 }

@@ -44,7 +44,7 @@ $row = mysql_func($sql);
 
     <div class="container">
     <div class="paper">
-        <div class="main">以下是为您找到的符合 "<?php echo htmlentities($keywords) ?>" 的所有内容！</div>
+        <div class="main">以下是为您找到的符合 "<?php echo $keywords ?>" 的所有内容！</div>
         <ul class="list-unstyled">
 
             <?php

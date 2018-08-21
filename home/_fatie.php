@@ -13,9 +13,7 @@ if($csrf_token != $_SESSION['fatie']) {
 $cid = getParam('bk');
 $title = getParam('title');
 $content = getParam('content');
-$content = html_entity_decode($content);
-$content = strip_tags($content,'<img><p>');
-//$content = htmlspecialchars($content);
+
 
 $ptime = $_SERVER['REQUEST_TIME'];
 $username = empty($_SESSION['home']['username']) ? '' : $_SESSION['home']['username'];
@@ -56,7 +54,6 @@ if (!$row) {
     exit;
 }
 $uid = $row[0]['id'];
-$content = htmlspecialchars($content);
 
 $sql = "insert into bbs_post(cid,title,content,ptime,uid,pip) value('$cid','$title','$content','$ptime','$uid','$pip')";
 $row = mysql_func($sql);

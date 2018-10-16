@@ -13,7 +13,7 @@
 
  Date: 03/06/2018 23:57:20
 */
-
+USE bbs;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
